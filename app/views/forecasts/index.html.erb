@@ -2,15 +2,8 @@
 
 <% content_for :title, "Forecasts" %>
 
-<h1>Forecasts</h1>
+<%= simple_form_for :forecast, url: forecasts_search_path, method: :get do |f| %>
+ <%= f.input :zip, required: true %>
 
-<div id="forecasts">
-  <% @forecasts.each do |forecast| %>
-    <%= render forecast %>
-    <p>
-      <%= link_to "Show this forecast", forecast %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New forecast", new_forecast_path %>
+  <%= f.button :submit, 'Check the Weather' %>
+<% end %>
