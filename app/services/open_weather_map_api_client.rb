@@ -1,6 +1,7 @@
 class OpenWeatherMapApiClient
   attr_reader :url, :zip
 
+  # Convenience method to execute without having to manually instantiate first
   def self.execute(*args)
     new(*args).execute
   end
@@ -16,9 +17,9 @@ class OpenWeatherMapApiClient
 
     response = HTTParty.get(url)
 
-    if response['cod'] == "200" # success
+    if response["cod"] == "200" # success
       # have to make sure downstream knows where this is a forecast for
-      data = response['list'].first
+      data = response["list"].first
       data[:zip] = zip
       data.deep_symbolize_keys!
     else # failure, just return nil

@@ -5,13 +5,13 @@ RSpec.describe Forecast, type: :model do
     let(:example_api_response) do
       {
         dt: 1750204800,
-        main: {temp: 94.21, feels_like: 104.04, temp_min: 92.03, temp_max: 94.21, pressure: 1009, sea_level: 1009, grnd_level: 986, humidity: 51, temp_kf: 1.21},
-        weather: [{id: 802, main: "Clouds", description: "scattered clouds", icon: "03d"}],
-        clouds: {all: 40},
-        wind: {speed: 16.87, deg: 155, gust: 21.65},
+        main: { temp: 94.21, feels_like: 104.04, temp_min: 92.03, temp_max: 94.21, pressure: 1009, sea_level: 1009, grnd_level: 986, humidity: 51, temp_kf: 1.21 },
+        weather: [ { id: 802, main: "Clouds", description: "scattered clouds", icon: "03d" } ],
+        clouds: { all: 40 },
+        wind: { speed: 16.87, deg: 155, gust: 21.65 },
         visibility: 10000,
         pop: 0,
-        sys: {pod: "d"},
+        sys: { pod: "d" },
         dt_txt: "2025-06-18 00:00:00",
         zip: 78702
       }
@@ -46,7 +46,6 @@ RSpec.describe Forecast, type: :model do
         end
       end
     end
-
   end
 
   describe '.human_readable_wind_direction' do

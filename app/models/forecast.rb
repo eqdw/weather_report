@@ -1,13 +1,13 @@
 class Forecast < ApplicationRecord
-
   # Note: Semantically this would make more sense
   # as a hashmap with integer value keys, but I got
   # a syntax error when I tried to do that explicitly,
   # and I didn't want to spend time figuring that out
   WIND_SPEED_LOOKUP = %w[North North-East East South-East South South-West West North-West]
 
-  scope :unexpired, -> { where('valid_until >= ?', Time.now) }
+  scope :unexpired, -> { where("valid_until >= ?", Time.now) }
 
+  # This method assumes it will receive the output from the weather api client directly
   def self.create_from_api_response(data)
     return nil if data.nil? # do not create a forecast if we failed to get forecast data
 

@@ -56,7 +56,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails'
+  gem "rspec-rails"
 
   gem "pry"
 end
@@ -71,5 +71,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
-  gem 'timecop'
+  gem "timecop"
 end
