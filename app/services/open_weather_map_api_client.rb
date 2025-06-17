@@ -18,7 +18,7 @@ class OpenWeatherMapApiClient
       # have to make sure downstream knows where this is a forecast for
       data = response['list'].first
       data[:zip] = zip
-      data
+      data.deep_symbolize_keys!
     else # failure, just return nil
       nil
     end

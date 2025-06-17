@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   get 'forecasts',        to: 'forecasts#index'
+
+  # Note: Strictly speaking, this should be a POST, because it is creating state on the back-end
+  # However, the semantics of my app are such that the fact that this creates a record is irrelevant to
+  # the client. From the client's perspective, for all they know, every possible weather forecast
+  # already exists and they're just grabbing it. That, plus this way third party clients can
+  # get the weather with just a url, without having to worry about submitting a form body.
   get 'forecasts/search', to: 'forecasts#search'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

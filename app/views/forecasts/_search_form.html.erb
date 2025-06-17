@@ -1,0 +1,5 @@
+<%= simple_form_for :forecast, url: forecasts_search_path, method: :get do |f| %>
+  <%= f.input :zip, required: true %>
+
+  <%= f.button :submit, 'Check the Weather' %>
+<% end %>
