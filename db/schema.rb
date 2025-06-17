@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_16_010214) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_17_004814) do
   create_table "forecasts", force: :cascade do |t|
-    t.string "data"
     t.datetime "valid_until"
     t.string "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "valid_at"
+    t.string "temp"
+    t.string "temp_min"
+    t.string "temp_max"
+    t.string "humidity"
+    t.string "wind_direction"
+    t.string "wind_speed"
   end
 end
