@@ -1,4 +1,7 @@
 <p style="color: green"><%= notice %></p>
+<% if cached_time %>
+  <p style="color: green"> Cached forecast originally retrieved at <%= cached_time %> </p>
+<% end %>
 
 <% content_for :title, "Forecasts" %>
 

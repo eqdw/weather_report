@@ -11,10 +11,14 @@ class ForecastsController < ApplicationController
     zip = params[:forecast][:zip]
     @forecast = Forecast.unexpired.where(zip: zip).first
 
+    cached_time = @forecast&.created_at
+
     @forecast ||=
       Forecast.create_from_api_response(
         OpenWeatherMapApiClient.execute(zip)
       )
+
+    render :search, locals: { cached_time: cached_time }
   end
 
   private
