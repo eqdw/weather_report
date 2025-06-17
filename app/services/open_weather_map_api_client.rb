@@ -12,6 +12,8 @@ class OpenWeatherMapApiClient
 
   # for now, just get the immediate forecast
   def execute
+    return nil unless zip.present?
+
     response = HTTParty.get(url)
 
     if response['cod'] == "200" # success
